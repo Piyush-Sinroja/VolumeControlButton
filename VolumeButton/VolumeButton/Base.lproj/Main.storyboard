@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nFs-9Y-cvM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Volume Control-->
+        <scene sceneID="Oyx-pz-aKY">
+            <objects>
+                <viewController id="AmG-rw-iOa" customClass="ViewController" customModule="VolumeButton" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hie-D1-tAI"/>
+                        <viewControllerLayoutGuide type="bottom" id="YUr-fe-gqI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WwM-93-5cq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S6a-e4-2QB" customClass="MyKnob" customModule="VolumeButton" customModuleProvider="target">
+                                <rect key="frame" x="88" y="234" width="200" height="200"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Xey-z8-qGU"/>
+                                    <constraint firstAttribute="width" constant="200" id="Y2w-KK-YlF"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="doKnob:" destination="AmG-rw-iOa" eventType="valueChanged" id="ToS-36-fF0"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="S6a-e4-2QB" secondAttribute="centerY" id="D0D-5i-HxT"/>
+                            <constraint firstAttribute="centerX" secondItem="S6a-e4-2QB" secondAttribute="centerX" id="zRV-uR-qWX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Volume Control" id="Ueg-pu-VIB"/>
+                    <connections>
+                        <outlet property="knob" destination="S6a-e4-2QB" id="UHz-lF-Xad"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CGV-Nz-V2u" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="964" y="35.532233883058474"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pb6-hO-QJV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nFs-9Y-cvM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ucz-Sq-vMC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="AmG-rw-iOa" kind="relationship" relationship="rootViewController" id="yd2-Tg-Vly"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="St6-wn-wTa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-140" y="36"/>
+        </scene>
+    </scenes>
+</document>
